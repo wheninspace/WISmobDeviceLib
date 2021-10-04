@@ -16,9 +16,9 @@
 ## The function can be copied to your stack, so you don't even need to use it as a library. It needs no external data source.
 
 function WISgetMobileMarginData pDeviceCode ## Parameter optional, normally just used to test the function in the IDE, where iphoneDeviceModel() does not work
-   ## The "Lookup tables" - Updated 1 Oct 2021 - This needs to be updated when Apple releases new models
+   ## The "Lookup tables" - Updated 4 Oct 2021 - This needs to be updated when Apple releases new models
    ## You can also put these constants as an array in a cProp of your stack, and modify the script accordingly, to shorten it
-   constant kIphone44= "10,3 10,6 11,2 11,4 11,6"
+   constant kIphone44= "10,3 10,6 11,2 11,4 11,6 12,3 12,5"
    constant kIphone47= "13,2 13,3 13,4 14,2 14,3 14,5"
    constant kIphone48= "11,8 12,1"
    constant kIphone50= "13,1 14,4"
