@@ -1,6 +1,6 @@
 ﻿script "WISmobDeviceLib"
 ##############################################################################################################################################
-# WISmobDeviceLib - by Andreas Bergendal - WhenInSpace AB
+# WISmobDeviceLib - by Andreas Bergendal - WhenInSpace AB - Updated 2022-10-29
 #
 # The handlers in this library help identifying the iPhone/iPad model by using the LC 9.6.3+ function iphoneDeviceModel()
 # This function only gives the device code, which in itself tells nothing about the device. 
@@ -19,10 +19,12 @@ function WISgetMobileMarginData pDeviceCode ## Parameter optional, normally just
    ## The "Lookup tables" - Updated 4 Oct 2021 - This needs to be updated when Apple releases new models
    ## You can also put these constants as an array in a cProp of your stack, and modify the script accordingly, to shorten it
    constant kIphone44= "10,3 10,6 11,2 11,4 11,6 12,3 12,5"
-   constant kIphone47= "13,2 13,3 13,4 14,2 14,3 14,5"
+   constant kIphone47= "13,2 13,3 13,4 14,2 14,3 14,5 14,7 14,8"
    constant kIphone48= "11,8 12,1"
    constant kIphone50= "13,1 14,4"
+   constant kIphone59= "15,2 15,3"
    constant kIpad20=   "8 13 14"
+   local tReturn,tCode
    
    ## This requires LC 9.6.3 or later
    if pDeviceCode is empty then put iphoneDeviceModel() into pDeviceCode
@@ -97,7 +99,7 @@ function WISgetMobDeviceData pDeviceCode
 end WISgetMobDeviceData
 
 command WISupdateSourceData
-   local tSourceDataA
+   local tSourceDataA,tDataA
    
    put URL "https://github.com/wheninspace/WISmobDeviceLib/raw/main/WISmobDeviceLibData.lson" into tDataA
    put arrayDecode(tDataA) into tSourceDataA ## Change to your own method if you prefer
