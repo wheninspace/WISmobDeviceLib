@@ -1,6 +1,10 @@
 # WISmobDeviceLib 
 - by Andreas Bergendal - WhenInSpace AB
 
+Updates
+(2023-09-30) Added iPhone 15 variants
+
+Description
 The handlers in this library help identifying the iPhone/iPad model by using the LC 9.6.3+ function iphoneDeviceModel()
 This function only gives the device code, which in itself tells nothing about the device. 
 The code has to be mapped to data about the device, which LC does not do.
