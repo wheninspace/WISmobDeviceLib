@@ -1,6 +1,6 @@
 ﻿script "WISmobDeviceLib"
 ##############################################################################################################################################
-# WISmobDeviceLib - by Andreas Bergendal - WhenInSpace AB - Updated 2022-10-29
+# WISmobDeviceLib - by Andreas Bergendal - WhenInSpace AB - Updated 2023-09-30
 #
 # The handlers in this library help identifying the iPhone/iPad model by using the LC 9.6.3+ function iphoneDeviceModel()
 # This function only gives the device code, which in itself tells nothing about the device. 
@@ -22,7 +22,7 @@ function WISgetMobileMarginData pDeviceCode ## Parameter optional, normally just
    constant kIphone47= "13,2 13,3 13,4 14,2 14,3 14,5 14,7 14,8"
    constant kIphone48= "11,8 12,1"
    constant kIphone50= "13,1 14,4"
-   constant kIphone59= "15,2 15,3"
+   constant kIphone59= "15,2 15,3 15,4 15,5 16,1 16,2"
    constant kIpad20=   "8 13 14"
    local tReturn,tCode
    
@@ -64,6 +64,9 @@ function WISgetMobileMarginData pDeviceCode ## Parameter optional, normally just
          break
       case pDeviceCode is among the words of kIphone50
          put 50 into tReturn["notchMargin"]
+         break
+      case pDeviceCode is among the words of kIphone59
+         put 59 into tReturn["notchMargin"]
          break
       default
          ## The model has no notch and thus needs no extra margins
